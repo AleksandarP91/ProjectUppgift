@@ -1,0 +1,52 @@
+﻿<div class="col-md-12"> 
+    <h1 ng-bind="title"></h1>
+</div>
+
+<div class="col-md-12">
+    <div class="col-md-2">
+        <div class="panel panel-default">
+            <div class="pre-scrollable">
+                <table class="table">
+                    <tr ng-repeat="channel in models.channels | orderBy: channel.name : sort.descending track by $index">
+                        <td style="cursor: pointer;" ng-bind="channel.name" ng-click="getChannelMessages(channel.id)"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <div class="panel panel-default">
+            <div id="msgScroll" class="pre-scrollable">
+                <table id="messages">
+                    <tr style="list-style-type:none" ng-repeat="message in chSelect.selectedChannel | orderBy: message.timeSent : sort.descending track by $index">
+                        <td style="font-weight:bold" ng-bind="message.author">:</td>
+                        <td class='col-md-10 col-md-offset-1' ng-bind="message.body"></td>
+                        <td id="time" class='col-md-10 col-md-offset-1' ng-bind="message.timeSent | date: 'medium'"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <form ng-submit="sendMessage()" >
+            <fieldset>
+                <div class="form-group">
+                    <input type="text"
+                           id="body"
+                           class="form-control"
+                           ng-model="newMessage.body"
+                           placeholder="Text..." />
+                    <input type="hidden"
+                           class="form-control"
+                           ng-model="newMessage.channelId"
+                           ng-bind="newMessage.channelId = msg.channelId"/>
+                    <input type="hidden"
+                           class="form-control"
+                           ng-model="newMessage.author"
+                           ng-bind="newMessage.author = msg.author"/>
+                </div>
+                <button type="submit" class="btn btn-success" >
+                    Send
+                </button>
+            </fieldset>
+        </form>
+    </div>
+</div>

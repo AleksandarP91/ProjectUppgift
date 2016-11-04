@@ -1,0 +1,47 @@
+﻿<div class="col-md-12">
+    <h1 ng-bind="title"></h1>
+</div>
+
+<div class="col-md-12" style="margin-bottom: 10px;">
+    <button type="button"
+            class="btn btn-success"
+            ng-click="go('/Channels/New')">
+        <span class="glyphicon glyphicon-plus"></span> Add Channel
+    </button>
+</div>
+<p class="h3">Channels</p>
+    <div class="col-md-12">
+    <div class="panel panel-default">
+        <div class="pre-scrollable">
+            <table class="table">
+                <tr ng-repeat="channel in models.channels | orderBy: channel.name : sort.descending track by $index">
+                    <td ng-bind="channel.name"></td>                   
+                    <td class="col-md-3 col-md-offset-9">
+                        <button type="button"
+                                class="btn btn-danger"
+                                ng-click="deleteChannel(channel.id)">
+                            <span class="glyphicon glyphicon-remove"></span> Delete
+                        </button>
+                        <button type="button"
+                                class="btn"
+                                ng-click="addFavorite(channel.id)">
+                            <span class="glyphicon glyphicon-plus"></span> Add to Favorites
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<p class="h3">Favorites</p>
+    <div class="col-md-12">
+    <div class="panel panel-default">
+        <div class="pre-scrollable">
+            <table class="table">
+                <tr ng-repeat="channel in models.favoriteChannels | orderBy: channel.name : sort.descending track by $index">
+                    <td ng-bind="channel.name"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

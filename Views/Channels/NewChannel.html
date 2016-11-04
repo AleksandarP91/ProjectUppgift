@@ -1,0 +1,18 @@
+﻿<div class="col-md-3">
+    <form ng-submit="addChannel()">
+        <fieldset>
+            <legend ng-bind="title"></legend>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text"
+                       id="name"
+                       class="form-control"
+                       ng-model="newChannel.name"
+                       placeholder="Name..." />
+            </div>
+            <button type="submit" class="btn btn-success">
+                Add Channel
+            </button>
+        </fieldset>
+    </form>
+</div>  

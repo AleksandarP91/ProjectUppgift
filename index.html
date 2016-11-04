@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html ng-app="mainModule">
+<head>
+    <title>AngularBaseApp</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <link href="CSS/master.css" rel="stylesheet" />
+</head>
+<body ng-controller="MainController">
+    <header ng-include="'Views/Partials/Navbar.html'"></header>
+
+    <main class="container-fluid no-whitespace" ng-view></main>
+    <!-- 3rd party libs and frameworks -->
+    <script src="Scripts/jquery-1.9.1.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <!-- Misc -->
+    <!--<script src="Scripts/bootstrap-set-active.js"></script>-->
+    <!-- Modules -->
+    <script src="Scripts/Modules/module.js"></script>
+    <!-- Routes -->
+    <script src="Scripts/Routes/route.js"></script>
+    <!--Services-->
+    <script src="Scripts/Services/chat-api.service.js"></script>
+    <!-- Controllers -->
+    <script src="Scripts/Controllers/main.controller.js"></script>
+    <script src="Scripts/Controllers/channel.controller.js"></script>
+    <script src="Scripts/Controllers/admin.controller.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿<nav class="navbar navbar-inverse no-whitespace">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button"
+                    class="navbar-toggle"
+                    data-toggle="collapse"
+                    data-target="#navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">AngularBaseApp</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav">
+                <li ng-class="{active: $route.current.activeTab == 'Channel'}">
+                    <a href="/">Channel</a>
+                </li>
+                <li ng-class="{active: $route.current.activeTab == 'Admin'}">
+                    <a href="/Admin">Admin</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
